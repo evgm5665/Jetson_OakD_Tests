@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.16)
+project(oakd_cam_test LANGUAGES CXX)
+
+find_package(depthai CONFIG REQUIRED)
+
+add_executable(inspect_camera inspect_camera.cpp)
+target_compile_features(inspect_camera PRIVATE cxx_std_17)
+target_link_libraries(inspect_camera PRIVATE depthai::core)
+add_executable(imu_motion imu_motion.cpp)
+target_compile_features(imu_motion PRIVATE cxx_std_17)
+target_link_libraries(imu_motion PRIVATE depthai::core)
