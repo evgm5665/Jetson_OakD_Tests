@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 3.16)
 project(oakd_cam_test LANGUAGES CXX)
 
 find_package(depthai CONFIG REQUIRED)
-
+add_executable(stereo_imu_check stereo_imu_check.cpp)
+target_compile_features(stereo_imu_check PRIVATE cxx_std_17)
+target_link_libraries(stereo_imu_check PRIVATE depthai::core)
 add_executable(inspect_camera inspect_camera.cpp)
 target_compile_features(inspect_camera PRIVATE cxx_std_17)
 target_link_libraries(inspect_camera PRIVATE depthai::core)
